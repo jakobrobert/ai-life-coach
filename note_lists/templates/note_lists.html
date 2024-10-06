@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Life Coach - Note Lists</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-3">
+        <h1 class="text-center">Note Lists</h1>
+
+        <form action="{% url 'add_note_list' %}" method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label class="form-label" for="title" >New Note List Title</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Note List</button>
+        </form>
+
+        <hr>
+
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- TODO Render actual note lists here -->
+                <tr>
+                    <td>Sample Note List</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
